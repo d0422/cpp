@@ -50,8 +50,8 @@ void test_big_integer() {
 	cout << "1234567890 - 1234567899 = -9 -> " << BigInteger(12345676890) - BigInteger(12345676899) << endl;
 	cout << "-75--85=10 -> " << BigInteger(-75) - BigInteger(-85) << endl;
 	cout << "75-85=-10-> " << BigInteger(75) - BigInteger(85) << endl;
-	cout << "-75-85 -> " << BigInteger(-75) - BigInteger(85) << endl;
-	//cout << "75--85 -> " << BigInteger(75) - BigInteger(-85) << endl;
+	cout << "-75-85=-160 -> " << BigInteger(-75) - BigInteger(85) << endl;
+	cout << "75--85=160 -> " << BigInteger(75) - BigInteger(-85) << endl;
 
 }
 

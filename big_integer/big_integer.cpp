@@ -65,52 +65,49 @@ BigInteger::BigInteger() {
 
 BigInteger::BigInteger(int value) {
 	/* Should be implemented */
-	initialize_properties();
 	string tmp = to_string(value);
-	capacity = tmp.length()+1;
-	value_string = new char[capacity]();
+	this->capacity = tmp.size()+1;
+	this->value_string = new char[capacity]();
 	if (value < 0) {
-		sign = false;
+		this->sign = false;
 		strcpy(value_string, tmp.substr(1).c_str());
 	}
 	else {
-		sign = true;
+		this->sign = true;
 		strcpy(value_string, tmp.c_str());
 	}
-	length = strlen(value_string);
+	this->length = strlen(value_string);
 }
 
 BigInteger::BigInteger(long long value) {
 	/* Should be implemented */
-	initialize_properties();
 	string tmp = to_string(value);
-	capacity = tmp.length()+1;
-	value_string = new char[capacity]();
+	this->capacity = tmp.size()+1;
+	this->value_string = new char[capacity]();
 	if (value < 0) {
-		sign = false;
+		this->sign = false;
 		strcpy(value_string, tmp.substr(1).c_str());
 	}
 	else {
-		sign = true;
+		this->sign = true;
 		strcpy(value_string, tmp.c_str());
 	}
-	length = strlen(value_string);
+	this->length = strlen(value_string);
 
 }
 
 BigInteger::BigInteger(std::string value) {
-	initialize_properties();
-	capacity = value.length()+1;
-	value_string = new char[capacity]();
+	this->capacity = value.size()+1;
+	this->value_string = new char[capacity]();
 	if (value.front() == '-') {
-		sign = false;
+		this->sign = false;
 		strcpy(value_string, value.substr(1).c_str());
 	}
 	else {
-		sign = true;
+		this->sign = true;
 		strcpy(value_string, value.c_str());
 	}
-	length = strlen(value_string);
+	this->length = strlen(value_string);
 }
 
 BigInteger::BigInteger(const BigInteger& big_integer) {
@@ -268,21 +265,21 @@ BigInteger BigInteger::operator + (const BigInteger& big_integer) const {
 
 BigInteger BigInteger::operator - (const BigInteger& big_integer) const {
 	/* Should be implemented */
-	BigInteger result;
 	if ((this->sign && big_integer.sign) || (!this->sign && !big_integer.sign)) {
 		string str1(this->value_string);
 		string str2(big_integer.value_string);
+		bool sign;
 		if (this->sign && big_integer.sign) {
-			result.sign = true;
+			sign = true;
 		}
 		else {
-			result.sign = false;
+			sign = false;
 		}
 		if (str1 < str2) {
 			str1.swap(str2);
-			result.sign = !result.sign;
+			sign = !sign;
 		}
-		string ret(max(str1.size(), str2.size()) + 1, '0');
+		string ret(max(str1.size(), str2.size()), '0');
 		int sum = 0;
 		bool flag = false;
 		for (int i = 0; i < ret.size(); ++i)
@@ -305,18 +302,15 @@ BigInteger BigInteger::operator - (const BigInteger& big_integer) const {
 		while (ret.front() == '0') {
 			ret=ret.substr(1);
 		}
-		result.capacity = ret.size();
-		result.length = ret.length();
-		result.value_string = new char[capacity];
-		strcpy(result.value_string, ret.c_str());
+		if (sign) return BigInteger(ret);
+		else return BigInteger("-" + ret);
 	}
 	else if (this->sign && !big_integer.sign) {
-		return BigInteger(string(this->value_string)) + BigInteger(string(big_integer.value_string));
+		return *this + BigInteger(string(big_integer.value_string));
 	}
 	else if (!this->sign && big_integer.sign) {
-		return BigInteger("-"+ string(this->value_string)) + BigInteger("-" + (string(big_integer.value_string)));
+		return  *this+ BigInteger("-" + string(big_integer.value_string));
 	}
-	return result;
 }
 
 BigInteger BigInteger::operator * (const BigInteger& big_integer) const {
