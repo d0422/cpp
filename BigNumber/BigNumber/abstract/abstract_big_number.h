@@ -29,16 +29,16 @@ namespace abstract_bignumber {
 		void toggle_sign();
 
 		// Public pure virtual method
-		virtual std::string get_name() const = 0;
-		virtual char* get_string() const = 0;
-		virtual bool get_sign() const = 0;
+		virtual std::string get_name() const = 0; //순수 가상함수 -> 추상클래스
+		virtual char* get_string() const = 0;//순수 가상함수 -> 추상클래스
+		virtual bool get_sign() const = 0;//순수 가상함수 -> 추상클래스
 
-		virtual unsigned int get_capacity() const = 0;
-		virtual unsigned int get_length() const = 0;
+		virtual unsigned int get_capacity() const = 0; //순수 가상함수 -> 추상클래스
+		virtual unsigned int get_length() const = 0; //순수 가상함수 -> 추상클래스
 
-		virtual void doubling_capacity() = 0;
-		virtual void shrink_to_fit() = 0;
+		virtual void doubling_capacity() = 0; //순수 가상함수 -> 추상클래스
+		virtual void shrink_to_fit() = 0; //순수 가상함수 -> 추상클래스
 
-		virtual void test() const = 0;
+		virtual void test() const = 0; //순수 가상함수 -> 추상클래스
 	};
 }

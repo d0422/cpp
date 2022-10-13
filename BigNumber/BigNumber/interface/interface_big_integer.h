@@ -6,7 +6,7 @@
 
 
 namespace interface_bignumber {
-	class BigInteger : public IBigNumber, public ITestable, public IVector
+	class BigInteger : public IBigNumber, public ITestable, public IVector //IBigNumber, ITestable, IVector를 모두 상속하여 구현함
 	{
 	private:
 		// Identifier
@@ -46,7 +46,7 @@ namespace interface_bignumber {
 		virtual bool get_sign() const;
 		virtual void toggle_sign();
 
-		// Interface implementation (IVector)
+		// Interface implementation (IVector) -> IVector 구현
 		virtual char* get_string() const;
 		virtual unsigned int get_capacity() const;
 		virtual unsigned int get_length() const;

@@ -3,7 +3,7 @@
 
 
 namespace abstract_bignumber {
-	class BigInteger : public AbstractBigNumber {
+	class BigInteger : public AbstractBigNumber { //추상클래스BigNumber를 public으로 상속
 	private:
 		// Identifier
 		static const std::string name;

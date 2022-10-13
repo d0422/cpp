@@ -12,7 +12,7 @@ namespace abstract_bignumber {
 		unsigned int num_of_digits = this->get_num_of_digits(long_value);
 
 		return num_of_digits;
-	}
+	} //int인경우 longlong함수로 넘겨줌
 
 	unsigned int BigInteger::get_num_of_digits(long long value) const {
 		unsigned int num_of_digits = 0;
@@ -35,7 +35,7 @@ namespace abstract_bignumber {
 		}
 
 		return num_of_digits;
-	}
+	} //자리수 구하는 함수
 
 	// Protected virtual method
 	void BigInteger::initialize_properties() {
@@ -229,7 +229,7 @@ namespace abstract_bignumber {
 	unsigned int BigInteger::get_length() const {
 		return this->length;
 	}
-
+	// getter -> vittual 메소드 기재
 	void BigInteger::shrink_to_fit() {
 		if (this->capacity == this->length) {
 			return;

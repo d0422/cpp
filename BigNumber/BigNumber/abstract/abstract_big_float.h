@@ -4,7 +4,7 @@
 
 
 namespace abstract_bignumber {
-	class BigFloat : public AbstractBigNumber {
+	class BigFloat : public AbstractBigNumber { //Bignumber?? ???
 	private:
 		// Identifier
 		static const std::string name;
