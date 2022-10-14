@@ -29,16 +29,16 @@ namespace abstract_bignumber {
 		void toggle_sign();
 
 		// Public pure virtual method
-		virtual std::string get_name() const = 0; //¼ø¼ö °¡»óÇÔ¼ö -> Ãß»óÅ¬·¡½º
-		virtual char* get_string() const = 0;//¼ø¼ö °¡»óÇÔ¼ö -> Ãß»óÅ¬·¡½º
-		virtual bool get_sign() const = 0;//¼ø¼ö °¡»óÇÔ¼ö -> Ãß»óÅ¬·¡½º
+		virtual std::string get_name() const = 0; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ -> ï¿½ß»ï¿½Å¬ï¿½ï¿½ï¿½ï¿½
+		virtual char* get_string() const = 0;//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ -> ï¿½ß»ï¿½Å¬ï¿½ï¿½ï¿½ï¿½
+		virtual bool get_sign() const = 0;//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ -> ï¿½ß»ï¿½Å¬ï¿½ï¿½ï¿½ï¿½
 
-		virtual unsigned int get_capacity() const = 0; //¼ø¼ö °¡»óÇÔ¼ö -> Ãß»óÅ¬·¡½º
-		virtual unsigned int get_length() const = 0; //¼ø¼ö °¡»óÇÔ¼ö -> Ãß»óÅ¬·¡½º
+		virtual unsigned int get_capacity() const = 0; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ -> ï¿½ß»ï¿½Å¬ï¿½ï¿½ï¿½ï¿½
+		virtual unsigned int get_length() const = 0; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ -> ï¿½ß»ï¿½Å¬ï¿½ï¿½ï¿½ï¿½
 
-		virtual void doubling_capacity() = 0; //¼ø¼ö °¡»óÇÔ¼ö -> Ãß»óÅ¬·¡½º
-		virtual void shrink_to_fit() = 0; //¼ø¼ö °¡»óÇÔ¼ö -> Ãß»óÅ¬·¡½º
+		virtual void doubling_capacity() = 0; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ -> ï¿½ß»ï¿½Å¬ï¿½ï¿½ï¿½ï¿½
+		virtual void shrink_to_fit() = 0; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ -> ï¿½ß»ï¿½Å¬ï¿½ï¿½ï¿½ï¿½
 
-		virtual void test() const = 0; //¼ø¼ö °¡»óÇÔ¼ö -> Ãß»óÅ¬·¡½º
+		virtual void test() const = 0; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ -> ï¿½ß»ï¿½Å¬ï¿½ï¿½ï¿½ï¿½
 	};
 }
